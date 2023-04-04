@@ -1,0 +1,235 @@
+-- 1
+SELECT *
+FROM salesman;
+
+-- 2
+SELECT 'This is SQL Exercise, Practice and Solution';
+
+-- 3
+SELECT 18, 12, 3;
+
+-- 4
+SELECT 10 + 15;
+
+-- 5
+SELECT 18 * 4;
+
+-- 6
+SELECT name, commitssion
+FROM salesman;
+
+-- 7
+SELECT ord_date, salesman_id, ord_no, purch_amt
+FROM orders;
+
+-- 8
+SELECT DISTINCT salesman_id
+FROM orders;
+
+-- 9
+SELECT name, city
+FROM salesman
+WHERE city = 'Paris';
+
+-- 10
+SELECT customer_id, cust_name, city, grade, salesman_id
+FROM customer
+WHERE grade = 200;
+
+-- 11
+SELECT ord_no, ord_date, purch_amt
+FROM orders
+WHERE salesman_id = 5001;
+
+-- 12
+SELECT year, subject, winner
+FROM nobel_win
+WHERE year = 1970;
+
+-- 13
+SELECT 
+       winner
+FROM 
+       nobel_win
+WHERE 
+       year = 1970 
+       AND 
+       subject = 'Literature';
+
+-- 14
+SELECT 
+       year, subject
+FROM
+       nobel_win
+WHERE
+       winner = 'Dennis Gabor';
+
+-- 15
+SELECT
+       winner
+FROM
+       nobel_win
+WHERE
+       subject = 'Physics'
+       AND
+       year = 1950;
+
+-- 16
+SELECT 
+       year, subject, winner, country
+FROM 
+       nobel_win
+WHERE
+       subject = 'Chemistry'
+       AND
+       year BETWEEN 1965 AND 1975;
+
+-- 17
+SELECT *
+FROM
+       nobel_win
+WHERE
+       year > 1972
+       AND
+       winner = 'Menachem Begin' AND winner = "Yitzhak Rabin";
+
+-- 18
+SELECT *
+FROM
+       nobel_win
+WHERE
+       winner LIKE 'Louis%';
+
+-- 19
+SELECT *
+FROM
+       nobel_win
+WHERE
+       (subject = 'Physics'
+       AND
+       year = 1970)
+       OR
+       (category = 'Economics'
+       AND
+       year = 1971);
+
+-- 20
+SELECT *
+FROM
+       nobel_win
+WHERE
+       year = 1970
+       AND
+       category = 'Physiology'
+       AND
+       category = 'Economics';
+ 
+ -- 21
+SELECT *
+FROM
+       nobel_win
+WHERE
+       (category = 'Physiology'
+       AND 
+       year < 1971)
+       OR
+       (category = 'Peace'
+       AND
+       year > 1974);
+
+-- 22
+SELECT *
+FROM
+       nobel_win
+WHERE
+       winner = 'Johannes Georg Bednorz';
+
+-- 23
+SELECT *
+FROM
+       nobel_win
+WHERE
+       subject NOT LIKE 'P%'
+ORDER  BY 
+       year desc, winner;
+
+-- 24
+SELECT *
+FROM
+       nobel_win
+WHERE
+       year = 1970
+ORDER BY
+       CASE
+              WHEN subject IN ('Economics', 'Chemistry') THEn 1
+              ELSE 0
+       END asc;
+
+-- 25
+SELECT *
+FROM
+       item_mast
+WHERE
+       pro_price >= 200
+       AND
+       pro_price <= 600;
+
+-- 26
+SELECT 
+       AVG(pro_price)
+FROM
+       item_mast
+WHERE
+       pro_com = 16;
+
+-- 27
+SELECT 
+       pro_name AS 'Item Name'
+       AND
+       pro_price AS 'Price in Rs';
+
+-- 28
+SELECT
+       pro_name, pro_price
+FROM
+       item_mast
+WHERE
+       pro_price >= 250
+ORDER BY
+       pro_price desc,
+       pro_name;
+
+-- 29
+SELECT 
+       AVG(pro_price),
+       pro_com
+FROM
+       item_mast;
+
+-- 30
+SELECT
+       pro_name, pro_price
+FROM
+       item_mast
+WHERE
+       pro_price =
+       (MIN (pro_price));
+
+-- 31
+SELECT DISTINCT emp_lname
+FROM
+       emp_details;
+
+-- 32
+SELECT *
+FROM
+       emp_details
+WHERE
+       emp_lname = 'Snares';
+
+-- 33
+SELECT *
+FROM
+       emp_details
+WHERE
+       emp_dept = 57;
